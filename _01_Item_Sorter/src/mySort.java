@@ -25,11 +25,11 @@ public class mySort {
                         latestSmallestNumber.add(arrayList.get(i));
                     }
                 }
-                if (i == arrayList.size()-1) {
+                if (i == arrayList.size() - 1) {
                     sortedArrayList.addAll(latestSmallestNumber);
                     System.out.println(arrayList.size());
                     arrayList.remove(i);
-                    // if this is i it wouldn't delete the actual smallest one but the element which is located at arrayList[i]...
+                    //create a loop with the return of getIndexOfSmallest to remove items
                     System.out.println(arrayList.size());
                     latestSmallestNumber.clear();
                     latestSmallestNumber.add(Integer.MAX_VALUE);
@@ -37,6 +37,16 @@ public class mySort {
             }
         } while (arrayList.size() != 0);
         return sortedArrayList;
+    }
+
+    public static ArrayList<Integer> getIndexOfSmallest(int smallestNumber, ArrayList<Integer> arrayList) {
+        ArrayList<Integer> index = new ArrayList<Integer>();
+
+        for (int number : arrayList) {
+            if (number == smallestNumber)
+                index.add(arrayList.indexOf(number));
+        }
+        return index;
     }
 
 
