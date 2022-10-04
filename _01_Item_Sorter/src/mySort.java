@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class mySort {
     public static void main(String[] args) {
-        int[] randomArray = getRandomArray(4, 100);
+        int[] randomArray = getRandomArray(4, 10);
         //showRandomArray(randomArray);
         ArrayList<Integer> randomArrayList = getArrayAsArrayList(randomArray);
         System.out.println(randomArrayList);
@@ -27,10 +27,11 @@ public class mySort {
                 }
                 if (i == arrayList.size() - 1) {
                     sortedArrayList.addAll(latestSmallestNumber);
-                    System.out.println(arrayList.size());
-                    arrayList.remove(i);
-                    //create a loop with the return of getIndexOfSmallest to remove items
-                    System.out.println(arrayList.size());
+                    ArrayList<Integer> indicesList = getIndexOfSmallest(latestSmallestNumber.get(0), arrayList);
+                    for (int j = 0; j < indicesList.size(); j++) {
+                        System.out.println(indicesList.get(j));
+                        arrayList.remove(indicesList.get(j));
+                    }
                     latestSmallestNumber.clear();
                     latestSmallestNumber.add(Integer.MAX_VALUE);
                 }
@@ -42,9 +43,10 @@ public class mySort {
     public static ArrayList<Integer> getIndexOfSmallest(int smallestNumber, ArrayList<Integer> arrayList) {
         ArrayList<Integer> index = new ArrayList<Integer>();
 
-        for (int number : arrayList) {
-            if (number == smallestNumber)
-                index.add(arrayList.indexOf(number));
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i) == smallestNumber) {
+                index.add(i);
+            }
         }
         return index;
     }
