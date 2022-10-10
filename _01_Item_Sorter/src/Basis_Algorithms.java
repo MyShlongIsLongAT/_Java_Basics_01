@@ -17,7 +17,7 @@ public class Basis_Algorithms {
     }
 
     public static int max(int[] array) {
-        int maxInt = Integer.MIN_VALUE;
+        int maxInt = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] > maxInt) {
                 maxInt = array[i];
@@ -27,7 +27,7 @@ public class Basis_Algorithms {
     }
 
     public static int min(int[] array) {
-        int minInt = Integer.MAX_VALUE;
+        int minInt = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] < minInt) {
                 minInt = array[i];
