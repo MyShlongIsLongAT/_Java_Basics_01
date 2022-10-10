@@ -25,7 +25,6 @@ public class Basis_Algorithms {
         }
         return maxInt;
     }
-
     public static int min(int[] array) {
         int minInt = array[0];
         for (int i = 0; i < array.length; i++) {
