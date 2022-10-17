@@ -4,10 +4,11 @@ import java.util.Random;
 public class mySort {
     public static void main(String[] args) {
         int[] randomArray = getRandomArray(10, 100);
-        //showRandomArray(randomArray);
-        ArrayList<Integer> randomArrayList = getArrayAsArrayList(randomArray);
+        showRandomArray(randomArray);
+/*        ArrayList<Integer> randomArrayList = getArrayAsArrayList(randomArray);
         System.out.println(randomArrayList);
         System.out.println(sortRandomArrayList(randomArrayList));
+*/
     }
 
     public static ArrayList<Integer> sortRandomArrayList(ArrayList<Integer> arrayList) {
@@ -23,7 +24,7 @@ public class mySort {
                     sortedArrayList.add(latestSmallestNumber);
                     int index = arrayList.indexOf(latestSmallestNumber);
                     arrayList.remove(index);
-                    latestSmallestNumber=Integer.MAX_VALUE;
+                    latestSmallestNumber = Integer.MAX_VALUE;
                 }
             }
         } while (arrayList.size() != 0);
@@ -40,9 +41,15 @@ public class mySort {
     }
 
     public static void showRandomArray(int[] randomArray) {
+        String characters = "";
         for (int i = 0; i < randomArray.length; i++) {
-            System.out.println(randomArray[i]);
+            if (i == 0) {
+                characters += randomArray[i];
+            } else {
+                characters += " , " + randomArray[i];
+            }
         }
+        System.out.println(characters);
     }
 
     public static ArrayList<Integer> getArrayAsArrayList(int[] data) {
