@@ -1,8 +1,10 @@
+package at.florian.oo.basics.sorts;
+
 public class Basis_Algorithms {
     public static void main(String[] args) {
         int[] myArray = mySort.getRandomArray(20, 100);
         //int[] newArray = revert(myArray);
-        //mySort.showRandomArray(newArray);
+        //at.florian.oo.basics.sorts.mySort.showRandomArray(newArray);
         System.out.println(max(myArray));
         System.out.println(min(myArray));
     }

@@ -1,3 +1,8 @@
+package at.florian.oo.basics.car;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car {
     private String serialNumber;
     private String manufacturer;
@@ -5,6 +10,8 @@ public class Car {
     private String model;
     private Engine engine;
     private Tank tank;
+    private List<RearMirror> rearMirrors;
+    private List<Tire> tires;
 
     public void breaking() {
         System.out.println("I'm breaking");
@@ -24,8 +31,22 @@ public class Car {
         }
     }
 
+    public void driving(int time, int velocity) {
+        System.out.println(this.tank.getCurrentFuel());
+        System.out.println("I am driving and consuming " + this.engine.getType());
+        int distance = velocity * time;
+        int consumed = this.engine.getFuelConsumption() * distance / 100;
+        this.tank.setCurrentFuel(this.tank.getCurrentFuel() - consumed);
+        System.out.println(this.tank.getCurrentFuel());
+
+    }
+
+    public void refueling(int liters) {
+        this.tank.setCurrentFuel(this.tank.getCurrentFuel() + liters);
+    }
+
     public void getRemainingRange() {
-        int remainingRange = this.tank.getCurrentFuel() / this.engine.getFuelConsumption() * 100;
+        double remainingRange = this.tank.getCurrentFuel() / this.engine.getFuelConsumption() * 100;
         System.out.println("You will get " + remainingRange + "km but you need to refuel before");
     }
 
@@ -40,6 +61,32 @@ public class Car {
         this.model = model;
         this.engine = engine;
         this.tank = tank;
+        this.rearMirrors = new ArrayList<RearMirror>();
+        this.tires = new ArrayList<Tire>();
+    }
+
+    public List<Tire> getTires() {
+        return tires;
+    }
+
+    public void addTires(Tire tire) {
+        this.tires.add(tire);
+    }
+
+    public Tank getTank() {
+        return tank;
+    }
+
+    public void setTank(Tank tank) {
+        this.tank = tank;
+    }
+
+    public List<RearMirror> getRearMirrors() {
+        return rearMirrors;
+    }
+
+    public void addRearMirrors(RearMirror rearMirrors) {
+        this.rearMirrors.add(rearMirrors);
     }
 
     public Engine getEngine() {

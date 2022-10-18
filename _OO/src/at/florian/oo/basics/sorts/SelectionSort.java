@@ -1,3 +1,5 @@
+package at.florian.oo.basics.sorts;
+
 public class SelectionSort {
     public static void main(String[] args) {
         int[] myArray = mySort.getRandomArray(5, 100);
@@ -6,7 +8,7 @@ public class SelectionSort {
         mySort.showRandomArray(SelectionSort(myArray));
     }
 
-//    public static ArrayList<Integer> SelectionSort(ArrayList<Integer> arrayList) {
+//    public static ArrayList<Integer> at.florian.oo.basics.sorts.SelectionSort(ArrayList<Integer> arrayList) {
 //        for (int i = 0; i < arrayList.size(); i++) {
 //            int currentValue = arrayList.get(i);
 //            for (int j = i; j < arrayList.size(); j++) {

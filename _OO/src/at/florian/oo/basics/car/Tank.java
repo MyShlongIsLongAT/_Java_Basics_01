@@ -1,3 +1,5 @@
+package at.florian.oo.basics.car;
+
 public class Tank {
     private int currentFuel;
     private int tankVolume;
