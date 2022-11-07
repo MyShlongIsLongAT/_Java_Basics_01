@@ -9,7 +9,6 @@ public class Engine {
     private String manufacturer;
     private TYPE type;
 
-    //TODO change locations of vars from car to engine and car to tank
     private int fuelConsumption;
 
     private int thrust;
