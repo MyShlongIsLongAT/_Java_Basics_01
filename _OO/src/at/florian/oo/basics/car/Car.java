@@ -66,7 +66,7 @@ public class Car {
     }
 
     public List<Tire> getTires() {
-        return tires;
+        return this.tires;
     }
 
     public void addTires(Tire tire) {
