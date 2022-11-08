@@ -1,9 +1,7 @@
 package at.florian.oo.basics.car;
 
 public class Engine {
-    public enum TYPE {diesel, gas}
-
-    ;
+    public enum TYPE {diesel, gas};
     private int horsePower;
     private String model;
     private String manufacturer;
